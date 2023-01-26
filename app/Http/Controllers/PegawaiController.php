@@ -14,12 +14,12 @@ class PegawaiController extends Controller
     {
         $data = DB::table('users')->get();
         // dd($dataa);
-        return view('Pegawai',compact('dataa'));
+        return view('Pegawai',compact('data'));
     }
 
     public function tambah()
     {
-        return view('tambah', compact('data'));
+        return view('tambah');
     }
 
     public function insertdata(Request $request)
@@ -36,7 +36,7 @@ class PegawaiController extends Controller
         'name' => $request->name,
         'email' => $request->email,
         'password' => bcrypt($request->password),
-        'role' => 2,
+        // 'role' => 2,
        ]);
         return redirect()->route('Pegawai.user');
     }
